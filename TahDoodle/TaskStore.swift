@@ -8,6 +8,18 @@
 import Foundation
 
 class TaskStore: ObservableObject {
+    
+    private let fileURL: URL = {
+        let fileManager = FileManager.default
+        let documentDirectories = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
+        let myDocumentDirectory = documentDirectories.first!
+        let taskFileURL = myDocumentDirectory.appendingPathComponent("tasks.json")
+        
+        print("Tasks file is \(taskFileURL)")
+        
+        return taskFileURL
+    }()
+    
     @Published private(set) var tasks = [Task]()
     
     func add(_ task: Task) {
