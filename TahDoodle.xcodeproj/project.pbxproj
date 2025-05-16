@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A57D0E6E2DD781E800624E6D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A57D0E6D2DD781E800624E6D /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		A57D0E5E2DD7808400624E6D /* TahDoodle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TahDoodle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57D0E6D2DD781E800624E6D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		A57D0E552DD7808400624E6D = {
 			isa = PBXGroup;
 			children = (
+				A57D0E6D2DD781E800624E6D /* README.md */,
 				A57D0E602DD7808400624E6D /* TahDoodle */,
 				A57D0E5F2DD7808400624E6D /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A57D0E6E2DD781E800624E6D /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
