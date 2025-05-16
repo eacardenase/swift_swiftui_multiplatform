@@ -22,14 +22,20 @@ class TaskStore: ObservableObject {
     
     @Published private(set) var tasks = [Task]()
     
+    init() {
+        loadTasks()
+    }
+    
     func add(_ task: Task) {
         tasks.append(task)
+        saveTasks()
     }
     
     func remove(_ task: Task) {
         guard let index = tasks.firstIndex(of: task) else { return }
         
         tasks.remove(at: index)
+        saveTasks()
     }
     
     private func saveTasks() {
