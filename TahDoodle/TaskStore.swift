@@ -31,6 +31,19 @@ class TaskStore: ObservableObject {
         
         tasks.remove(at: index)
     }
+    
+    private func saveTasks() {
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(tasks)
+            
+            try data.write(to: fileURL)
+            
+            print("Saved \(tasks.count) tasks to \(fileURL.path)")
+        } catch {
+            print("Could not save tasks. Reason: \(error)")
+        }
+    }
 }
 
 #if DEBUG
