@@ -10,14 +10,19 @@ import SwiftUI
 struct ContentView: View {
     
     let taskStore: TaskStore
+    @State private var newTaskTitle = ""
     
     private var newTaskView: some View {
-        Button("Add Task") {
-            #warning("The task title is hardcoded")
-            
-            let task = Task(title: "Title")
-            taskStore.add(task)
-        }
+        HStack {
+            TextField("Something to do", text: $newTaskTitle)
+            Button("Add Task") {
+                let task = Task(title: newTaskTitle)
+                
+                print(task)
+                
+                taskStore.add(task)
+            }.disabled(newTaskTitle.isEmpty)
+        }.padding()
     }
     
     var body: some View {
