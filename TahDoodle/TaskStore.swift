@@ -44,6 +44,19 @@ class TaskStore: ObservableObject {
             print("Could not save tasks. Reason: \(error)")
         }
     }
+    
+    private func loadTasks() {
+        do {
+            let data = try Data(contentsOf: fileURL)
+            let decoder = JSONDecoder()
+            
+            tasks = try decoder.decode([Task].self, from: data)
+            
+            print("Loaded \(tasks.count) tasks from \(fileURL.path)")
+        } catch {
+            print("Did not load any tasks. Reason: \(error)")
+        }
+    }
 }
 
 #if DEBUG
