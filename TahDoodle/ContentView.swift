@@ -12,7 +12,12 @@ struct ContentView: View {
     let taskStore: TaskStore
     
     private var newTaskView: some View {
-        Text("Placeholder for new task controls")
+        Button("Add Task") {
+            #warning("The task title is hardcoded")
+            
+            let task = Task(title: "Title")
+            taskStore.add(task)
+        }
     }
     
     var body: some View {
