@@ -18,9 +18,9 @@ struct ContentView: View {
             Button("Add Task") {
                 let task = Task(title: newTaskTitle)
                 
-                print(task)
-                
                 taskStore.add(task)
+                
+                newTaskTitle = ""
             }.disabled(newTaskTitle.isEmpty)
         }.padding()
     }

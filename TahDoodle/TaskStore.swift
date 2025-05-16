@@ -7,8 +7,8 @@
 
 import Foundation
 
-class TaskStore {
-    private(set) var tasks = [Task]()
+class TaskStore: ObservableObject {
+    @Published private(set) var tasks = [Task]()
     
     func add(_ task: Task) {
         tasks.append(task)
