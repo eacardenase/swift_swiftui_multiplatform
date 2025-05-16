@@ -15,6 +15,11 @@ struct TaskListView: View {
         List {
             ForEach(taskStore.tasks) { task in
                 TaskView(title: task.title)
+            }.onDelete { indexSet in
+                indexSet.forEach { index in
+                    let task = taskStore.tasks[index]
+                    taskStore.remove(task)
+                }
             }
         }
     }
