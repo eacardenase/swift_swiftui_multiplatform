@@ -11,7 +11,7 @@ import SwiftUI
 struct TahDoodleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TaskListView(taskStore: TaskStore.sample)
         }
     }
 }

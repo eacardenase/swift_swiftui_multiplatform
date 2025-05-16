@@ -7,6 +7,12 @@
 
 import Foundation
 
-struct Task: Equatable {
+struct Task: Equatable, Identifiable {
+    let id: UUID
     let title: String
+    
+    init(title: String) {
+        id = UUID()
+        self.title = title
+    }
 }
