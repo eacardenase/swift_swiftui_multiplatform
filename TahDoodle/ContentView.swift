@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let taskStore: TaskStore
+    
+    private var newTaskView: some View {
+        Text("Placeholder for new task controls")
+    }
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, SwiftUI!")
+            newTaskView
+            TaskListView(taskStore: taskStore)
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(taskStore: .sample)
 }
