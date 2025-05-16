@@ -16,9 +16,11 @@ struct TaskListView: View {
             ForEach(taskStore.tasks) { task in
                 TaskView(title: task.title)
                     .contextMenu {
+                        #if macOS
                         Button("Delete") {
                             taskStore.remove(task)
                         }
+                        #endif
                     }
             }.onDelete { indexSet in
                 indexSet.forEach { index in
