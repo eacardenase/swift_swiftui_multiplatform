@@ -1,0 +1,12 @@
+//
+//  Task.swift
+//  TahDoodle
+//
+//  Created by Edwin Cardenas on 5/16/25.
+//
+
+import Foundation
+
+struct Task: Equatable {
+    let title: String
+}
